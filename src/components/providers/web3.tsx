@@ -15,7 +15,7 @@ import {
   trustWallet,
   ledgerWallet,
 } from "@rainbow-me/rainbowkit/wallets";
-import { avalanche, avalancheFuji } from "wagmi/chains";
+import { polygonAmoy, polygon, sepolia } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   createStorage,
@@ -24,6 +24,8 @@ import {
   createConfig,
   http,
 } from "wagmi";
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 interface BaseStorage {
   getItem(key: string): string | null;
@@ -52,9 +54,11 @@ export const storage =
     : null;
 
 export const web3Config = createConfig({
-  chains: [avalanche],
+  chains: [polygonAmoy, polygon, sepolia],
   transports: {
-    [avalanche.id]: http(),
+    [polygonAmoy.id]: http(),
+    [polygon.id]: http(),
+    [sepolia.id]: http(),
   },
   storage,
 });
@@ -76,7 +80,7 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
           wallets: [argentWallet, trustWallet, ledgerWallet],
         },
       ],
-      chains: [avalanche, avalancheFuji],
+      chains: [polygon, polygonAmoy, sepolia ],
       storage,
     });
 
@@ -91,7 +95,9 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider modalSize="compact" theme={darkTheme()}>
+          <Navbar />
           {children}
+          <Footer />
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>

@@ -76,3 +76,248 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.fa-moon {
+  color: pink;
+  font-size: 9px;
+}
+
+.fa-sun {
+  color: yellow;
+  font-size: 9px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexStart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flexStartCenter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flexBetweenStart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flexCenterStart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 18px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid #EB1484;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(101.12deg, #EB1484 27.35%, #C91CC3 99.99%, #C81CC5 100%, #C81CC5 100%);
+}
+
+.imageContainer {
+  position: absolute;
+  left: 0;
+  top: 23%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0px; /* Space between images */
+}
+
+.imageContainer img {
+  max-width: 17%;
+  height: auto;
+}
+
+.moneyLeft {
+  padding-left: 74px; /* Add padding to the left image */
+  animation: levitate1 3s ease-in-out infinite;
+  position: absolute;
+  left: 99;
+  top: 99%;
+  z-index: 10;
+}
+
+.moon {
+  z-index: 1; /* Set z-index for the moon image */
+  /*animation: levitate2 6s ease-in-out infinite;*/
+}
+
+@keyframes diagonalMotion {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.elefantspaceRight {
+  z-index: 21; /* Set higher z-index for the right image */
+  padding-left: 34px; /* Add padding to the right image */
+  animation: diagonalMotion 6s ease-in-out infinite;
+  top: 48%;
+  z-index: 20;
+}
+
+.moneyRight {
+  z-index: 82; /* Set higher z-index for the right image */
+  padding-right: 81px; /* Add padding to the right image */
+  animation: levitate3 5s ease-in-out infinite;
+  left: -80px; /* Adjust this value to move the image closer to the moon */
+  top: 88%;
+  z-index: 20;
+}
+
+@keyframes levitate1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes levitate2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes levitate3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the value as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.elefantShipBackground {
+  background-image: url('/ElefantShip.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  right: 10px;
+  top: 10%;
+  transform: translateY(-50%);
+  animation: levitate 3s ease-in-out infinite;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards; /* No delay here */
+}
+
+/* Marketplace CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-family: system-ui, sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0); /* Change this line */
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}

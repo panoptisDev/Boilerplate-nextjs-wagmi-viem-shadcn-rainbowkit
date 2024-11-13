@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: "/opengraph-image",
-    creator: "@gabrielrvita",
+    creator: "@panoptisdev",
   },
   icons: {
     icon: "/favicon.ico",

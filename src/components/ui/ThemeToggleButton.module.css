@@ -1,0 +1,44 @@
+/* ThemeToggleButton.module.css */
+
+.checkbox {
+    display: none;
+  }
+  
+  .label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 3rem; /* Increased width */
+    height: 1.5rem; /* Increased height */
+    background-color: #2d2d2d;
+    border-radius: 1.5rem; /* Adjusted border-radius to match height */
+    padding: 0.25rem;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .label .fa-sun {
+    font-size: 2rem; /* Adjusted icon size */
+    color: #f39c12; /* Sun icon color */
+  }
+  
+  .label .fa-moon {
+    font-size: 2rem; /* Adjusted icon size */
+    color: #f1c40f; /* Moon icon color */
+  }
+  
+  .ball {
+    width: 1.5rem; /* Increased ball size */
+    height: 1.5rem; /* Increased ball size */
+    background-color: #00fffb;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.125rem;
+    left: 0.125rem;
+    transition: transform 0.3s;
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(1.5rem); /* Adjusted translation to match new width */
+  }
